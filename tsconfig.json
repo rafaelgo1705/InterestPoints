@@ -21,6 +21,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["./src/**/*.ts", "test"],
+  "include": ["./src/**/*.ts", "test", "database/connection.js"],
   "exclude": ["node_modules", "dist", "test"]
 }
