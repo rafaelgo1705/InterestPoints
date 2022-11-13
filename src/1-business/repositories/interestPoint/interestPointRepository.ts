@@ -1,5 +1,3 @@
-import { InterestPointsModel } from "@framework/models/interestPoint/interestPointModel";
-
 class OutputFindInterestPoint {
   id: number;
   name: string;
@@ -22,7 +20,7 @@ class OutputFindInterestPoint {
   }
 }
 
-interface InputCreateInterestPoint {
+export interface InputCreateInterestPoint {
   name: string;
   coordinateX: number;
   coordinateY: number;
@@ -30,17 +28,8 @@ interface InputCreateInterestPoint {
 
 export class OutputCreateInterestPoint extends OutputFindInterestPoint {}
 
-export class InterestPointRepository {
-  async createInterestPoint(
+export interface IInterestPointRepository {
+  createInterestPoint(
     data: InputCreateInterestPoint
-  ): Promise<OutputCreateInterestPoint> {
-    const create = await InterestPointsModel.create(
-      { ...data },
-      { returning: true }
-    );
-
-    const resultCreate = create.toJSON() as OutputCreateInterestPoint;
-
-    return OutputCreateInterestPoint.mapper(resultCreate);
-  }
+  ): Promise<OutputCreateInterestPoint>;
 }

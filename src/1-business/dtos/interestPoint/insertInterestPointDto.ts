@@ -1,3 +1,4 @@
+import { IError } from "@business/errors/interestPoint/interestPoint";
 import { OutputCreateInterestPoint } from "@business/repositories/interestPoint/interestPointRepository";
 
 export interface InputInsertInterestPointDto {
@@ -6,4 +7,4 @@ export interface InputInsertInterestPointDto {
   coordinateY: number;
 }
 
-export type OutputInsertInterestPointDto = OutputCreateInterestPoint;
+export type OutputInsertInterestPointDto = OutputCreateInterestPoint | IError;

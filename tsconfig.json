@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    // "rootDir": ".",
     "types": ["node", "jest"],
     "target": "es2019",
     "outDir": "dist",
@@ -25,5 +26,5 @@
     "strictPropertyInitialization": false
   },
   "include": ["./src/**/*.ts", "test"],
-  "exclude": ["node_modules", "dist", "test"]
+  "exclude": ["node_modules", "dist"]
 }
