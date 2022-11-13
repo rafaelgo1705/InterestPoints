@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "types": ["node", "jest"],
+    "rootDir": "./src",
+    "types": ["node"],
     "target": "es2019",
     "outDir": "dist",
     "lib": ["es2019"],
@@ -24,6 +25,6 @@
     "skipLibCheck": true,
     "strictPropertyInitialization": false
   },
-  "include": ["./src/**/*.ts", "test", "database/connection.js"],
-  "exclude": ["node_modules", "dist", "test"]
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
