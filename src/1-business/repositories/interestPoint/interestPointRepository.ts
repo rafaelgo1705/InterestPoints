@@ -28,7 +28,7 @@ interface InputCreateInterestPoint {
   coordinateY: number;
 }
 
-class OutputCreateInterestPoint extends OutputFindInterestPoint {}
+export class OutputCreateInterestPoint extends OutputFindInterestPoint {}
 
 export class InterestPointRepository {
   async createInterestPoint(

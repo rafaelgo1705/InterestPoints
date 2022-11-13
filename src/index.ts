@@ -3,7 +3,7 @@ import "reflect-metadata";
 import express, { Request, Response } from "express";
 import { routes } from "./routes";
 import cors from "cors";
-import { Validations } from "@controller/validations/index";
+import { Validations } from "src/2-controller/validations/index";
 
 const validations = new Validations();
 

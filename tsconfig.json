@@ -1,17 +1,16 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
-    "types": ["node"],
+    "types": ["node", "jest"],
     "target": "es2019",
     "outDir": "dist",
     "lib": ["es2019"],
     "module": "commonjs",
-    "typeRoots": ["./node_modules/@types"],
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@controller/*": ["src/1-controller/*"],
-      "@framework/*": ["src/2-framework/*"],
+      "@business/*": ["src/1-business/*"],
+      "@controller/*": ["src/2-controller/*"],
+      "@framework/*": ["src/3-framework/*"],
       "@test/*": ["test/*"]
     },
     "experimentalDecorators": true,
@@ -25,6 +24,6 @@
     "skipLibCheck": true,
     "strictPropertyInitialization": false
   },
-  "include": ["./src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["./src/**/*.ts", "test"],
+  "exclude": ["node_modules", "dist", "test"]
 }

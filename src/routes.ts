@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { InsertInterestPointOperation } from "@controller/operations/interestPoint/insertInterestPointOperation";
-import { InsertInterestPointValidation } from "@controller/validations/interestPoint/insertInterestPointValidation";
+import { InsertInterestPointOperation } from "src/2-controller/operations/interestPoint/insertInterestPointOperation";
+import { InsertInterestPointValidation } from "src/2-controller/validations/interestPoint/insertInterestPointValidation";
 
 const insertInterestPointOperation = new InsertInterestPointOperation();
 const insertInterestPointValidation = new InsertInterestPointValidation();
@@ -10,7 +10,7 @@ const routes = Router();
 routes.post(
   "/interestPoint",
   insertInterestPointValidation.validate(),
-  insertInterestPointOperation.store
+  insertInterestPointOperation.execute
 );
 
 export { routes };
