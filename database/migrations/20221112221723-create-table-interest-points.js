@@ -12,6 +12,8 @@ module.exports = {
       name: Sequelize.DataTypes.STRING,
       coordinateX: Sequelize.DataTypes.INTEGER,
       coordinateY: Sequelize.DataTypes.INTEGER,
+      createdAt: Sequelize.DataTypes.DATE,
+      updatedAt: Sequelize.DataTypes.DATE,
     });
   },
 

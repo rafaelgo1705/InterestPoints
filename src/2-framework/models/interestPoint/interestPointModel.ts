@@ -9,9 +9,9 @@ const sequelize = new Sequelize({
   dialect: process.env.DATABASE_DIALECT as Dialect,
 });
 
-export class InterestPoints extends Model {}
+export class InterestPointsModel extends Model {}
 
-InterestPoints.init(
+InterestPointsModel.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -29,6 +29,14 @@ InterestPoints.init(
     },
     coordinateY: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
       allowNull: false,
     },
   },
