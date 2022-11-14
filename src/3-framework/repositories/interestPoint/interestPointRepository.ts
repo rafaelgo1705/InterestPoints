@@ -2,10 +2,13 @@ import {
   IInterestPointRepository,
   InputCreateInterestPoint,
   InputListAllInterestPoint,
+  InputListInterestPoint,
   OutputCreateInterestPoint,
   OutputListAllInterestPoint,
+  OutputListInterestPoint,
 } from "@business/repositories/interestPoint/interestPointRepository";
 import { InterestPointsModel } from "@framework/models/interestPoint/interestPointModel";
+import { Op } from "sequelize";
 
 export class InterestPointRepository implements IInterestPointRepository {
   async createInterestPoint(
@@ -36,6 +39,17 @@ export class InterestPointRepository implements IInterestPointRepository {
       perPage,
       total: listAll.count,
       data: listAll.rows as unknown as OutputListAllInterestPoint["data"],
+    });
+  }
+
+  async listInterestPoint(
+    data: InputListInterestPoint
+  ): Promise<OutputListInterestPoint> {
+    const list = await InterestPointsModel.findAndCountAll();
+
+    return OutputListInterestPoint.mapper({
+      data: list.rows as unknown as OutputListInterestPoint["data"],
+      total: list.count,
     });
   }
 }

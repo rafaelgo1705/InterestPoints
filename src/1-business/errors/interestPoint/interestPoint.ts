@@ -15,3 +15,9 @@ export const errorOnListAllInterestPoint = (details?: string): IError => ({
   message: "Error On List All Interest Point",
   details,
 });
+
+export const errorOnListInterestPoint = (details?: string): IError => ({
+  code: "003",
+  message: "Error On List Interest Point",
+  details,
+});
