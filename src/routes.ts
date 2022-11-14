@@ -2,9 +2,9 @@ import { ListAllInterestPointOperation } from "@controller/operations/interestPo
 import { ListInterestPointOperation } from "@controller/operations/interestPoint/listInterestPointOperation";
 import { ListAllInterestPointValidation } from "@controller/validations/interestPoint/listAllInterestPointValidation";
 import { ListInterestPointValidation } from "@controller/validations/interestPoint/listInterestPointValidation";
+import { InsertInterestPointOperation } from "@controller/operations/interestPoint/insertInterestPointOperation";
+import { InsertInterestPointValidation } from "@controller/validations/interestPoint/insertInterestPointValidation";
 import { Router } from "express";
-import { InsertInterestPointOperation } from "src/2-controller/operations/interestPoint/insertInterestPointOperation";
-import { InsertInterestPointValidation } from "src/2-controller/validations/interestPoint/insertInterestPointValidation";
 
 const insertInterestPointOperation = new InsertInterestPointOperation();
 const insertInterestPointValidation = new InsertInterestPointValidation();

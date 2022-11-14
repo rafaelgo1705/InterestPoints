@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    // "rootDir": ".",
+    "rootDir": "./src",
     "types": ["node", "jest"],
     "target": "es2019",
     "outDir": "dist",
     "lib": ["es2019"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@business/*": ["src/1-business/*"],
       "@controller/*": ["src/2-controller/*"],
@@ -25,6 +25,6 @@
     "skipLibCheck": true,
     "strictPropertyInitialization": false
   },
-  "include": ["./src/**/*.ts", "test"],
+  "include": ["./src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

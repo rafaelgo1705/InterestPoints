@@ -7,7 +7,6 @@ import {
   OutputListInterestPoint,
 } from "@business/repositories/interestPoint/interestPointRepository";
 import { InterestPointsModel } from "@framework/models/interestPoint/interestPointModel";
-import { Op } from "sequelize";
 
 export class InterestPointRepository implements IInterestPointRepository {
   async createInterestPoint(
