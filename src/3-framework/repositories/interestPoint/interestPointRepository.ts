@@ -2,7 +2,6 @@ import {
   IInterestPointRepository,
   InputCreateInterestPoint,
   InputListAllInterestPoint,
-  InputListInterestPoint,
   OutputCreateInterestPoint,
   OutputListAllInterestPoint,
   OutputListInterestPoint,
@@ -42,14 +41,11 @@ export class InterestPointRepository implements IInterestPointRepository {
     });
   }
 
-  async listInterestPoint(
-    data: InputListInterestPoint
-  ): Promise<OutputListInterestPoint> {
-    const list = await InterestPointsModel.findAndCountAll();
+  async listInterestPoint(): Promise<OutputListInterestPoint> {
+    const list = await InterestPointsModel.findAll();
 
     return OutputListInterestPoint.mapper({
-      data: list.rows as unknown as OutputListInterestPoint["data"],
-      total: list.count,
+      data: list as unknown as OutputListInterestPoint["data"],
     });
   }
 }

@@ -14,14 +14,16 @@ class InsertInterestPointValidation {
         "string.empty": "Insira o Nome!",
       }),
 
-      coordinateX: Joi.number().required().empty().messages({
+      coordinateX: Joi.number().positive().required().empty().messages({
         "any.required": "Coordenada X é obrigatório!",
         "number.empty": "Insira a Coordenada X!",
+        "number.positive": "A coordenada X deve ser um valor positivo!",
       }),
 
-      coordinateY: Joi.number().required().empty().messages({
+      coordinateY: Joi.number().positive().required().empty().messages({
         "any.required": "Coordenada Y obrigatório!",
         "number.empty": "Insira a Coordenada Y!",
+        "number.positive": "A coordenada Y deve ser um valor positivo!",
       }),
     });
   }

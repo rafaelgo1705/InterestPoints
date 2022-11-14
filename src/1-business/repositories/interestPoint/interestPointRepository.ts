@@ -55,14 +55,9 @@ export class OutputListAllInterestPoint {
   }
 }
 
-export interface InputListInterestPoint {
-  coordinateX?: number;
-  coordinateY?: number;
-}
-
 export class OutputListInterestPoint {
   data: OutputFindInterestPoint[];
-  total: number;
+  total?: number;
 
   static mapper(data: OutputListInterestPoint): OutputListInterestPoint {
     return {
@@ -79,7 +74,5 @@ export interface IInterestPointRepository {
   listAllInterestPoint(
     data: InputListAllInterestPoint
   ): Promise<OutputListAllInterestPoint>;
-  listInterestPoint(
-    data: InputListInterestPoint
-  ): Promise<OutputListInterestPoint>;
+  listInterestPoint(): Promise<OutputListInterestPoint>;
 }

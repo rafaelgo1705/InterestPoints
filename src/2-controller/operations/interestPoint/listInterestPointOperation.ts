@@ -17,6 +17,7 @@ class ListInterestPointOperation {
         coordinateY: req.query?.coordinateY
           ? Number(req.query?.coordinateY)
           : null,
+        dMax: req.query?.dMax ? Number(req.query?.dMax) : null,
       };
 
       const resultList = await listInterestPointUseCase.execute(

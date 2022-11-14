@@ -15,8 +15,12 @@ class ListInterestPointValidation {
       }),
 
       coordinateY: Joi.number().required().empty().messages({
-        "any.required": "Coordenada Y obrigatório!",
+        "any.required": "Coordenada Y é obrigatório!",
         "number.empty": "Insira a Coordenada Y!",
+      }),
+      dMax: Joi.number().required().empty().messages({
+        "any.required": "Distância máxima é obrigatória!",
+        "number.empty": "Insira a distância máxima!",
       }),
     });
   }

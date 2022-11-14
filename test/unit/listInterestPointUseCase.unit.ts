@@ -12,7 +12,7 @@ describe("1-business.useCases.interestPoints.listInterestPointUseCase", () => {
     const listInterestPoint = new ListInterestPointUseCase();
 
     const result = await listInterestPoint.execute(
-      { coordinateX: 1, coordinateY: 10 },
+      { coordinateX: 1, coordinateY: 10, dMax: 10 },
       interestPointRepositoryMock
     );
 
@@ -31,7 +31,7 @@ describe("1-business.useCases.interestPoints.listInterestPointUseCase", () => {
       });
 
     const result = await listInterestPoint.execute(
-      { coordinateX: 1, coordinateY: 10 },
+      { coordinateX: 1, coordinateY: 10, dMax: 10 },
       interestPointRepositoryMock
     );
 

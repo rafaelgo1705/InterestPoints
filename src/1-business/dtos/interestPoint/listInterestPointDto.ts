@@ -4,6 +4,7 @@ import { OutputListInterestPoint } from "@business/repositories/interestPoint/in
 export interface InputListInterestPointDto {
   coordinateX: number;
   coordinateY: number;
+  dMax: number;
 }
 
 export type OutputListInterestPointDto = OutputListInterestPoint | IError;
