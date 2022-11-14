@@ -11,8 +11,12 @@ class ListInterestPointOperation {
 
     try {
       const data: InputListInterestPointDto = {
-        page: Number(req.query?.coordinateX),
-        perPage: Number(req.query?.coordinateY),
+        coordinateX: req.query?.coordinateX
+          ? Number(req.query?.coordinateX)
+          : null,
+        coordinateY: req.query?.coordinateY
+          ? Number(req.query?.coordinateY)
+          : null,
       };
 
       const resultList = await listInterestPointUseCase.execute(

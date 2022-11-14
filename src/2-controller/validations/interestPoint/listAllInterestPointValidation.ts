@@ -3,7 +3,7 @@ import { celebrate, Joi, Segments } from "celebrate";
 class ListAllInterestPointValidation {
   public validate() {
     return celebrate({
-      [Segments.BODY]: this.body(),
+      [Segments.QUERY]: this.body(),
     });
   }
 

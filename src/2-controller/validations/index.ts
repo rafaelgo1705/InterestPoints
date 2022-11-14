@@ -2,11 +2,16 @@ import { Response } from "express";
 
 class Validations {
   public formatValidate(error: any, res: Response) {
-    if (error?.details?.get("body")?.details[0]) {
+    const body = error?.details?.get("body");
+    const query = error?.details?.get("query");
+
+    if (body || query) {
+      const validationDetails = body || query;
+
       return res.status(400).json({
-        message: error?.details?.get("body")?.details[0]?.message,
-        field: error?.details?.get("body")?.details[0]?.path[0],
-        validation: error?.details?.get("body")?.details[0]?.type,
+        message: validationDetails?.details[0]?.message,
+        field: validationDetails?.details[0]?.path[0],
+        validation: validationDetails?.details[0]?.type,
       });
     }
 
