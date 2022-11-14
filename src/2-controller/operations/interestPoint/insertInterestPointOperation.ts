@@ -3,7 +3,6 @@ import { InsertInterestPointUseCase } from "@business/useCases/interestPoint/ins
 import { InterestPointRepository } from "@framework/repositories/interestPoint/interestPointRepository";
 import { Response, Request } from "express";
 import { IError } from "@business/errors/interestPoint/interestPoint";
-import { OutputCreateInterestPoint } from "@business/repositories/interestPoint/interestPointRepository";
 
 class InsertInterestPointOperation {
   async execute(req: Request, res: Response) {

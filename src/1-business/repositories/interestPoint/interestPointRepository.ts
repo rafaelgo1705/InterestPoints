@@ -28,8 +28,38 @@ export interface InputCreateInterestPoint {
 
 export class OutputCreateInterestPoint extends OutputFindInterestPoint {}
 
+export interface InputListAllInterestPoint {
+  page?: number;
+  perPage?: number;
+}
+
+export class OutputListAllInterestPoint {
+  page: number;
+  perPage: number;
+  total: number;
+  data: OutputCreateInterestPoint[];
+
+  static mapper(data: OutputListAllInterestPoint): OutputListAllInterestPoint {
+    const dataFormated: OutputCreateInterestPoint[] = [];
+
+    data?.data?.map((interestPoint) => {
+      dataFormated.push(interestPoint);
+    });
+
+    return {
+      page: data.page,
+      perPage: data.perPage,
+      total: data.total,
+      data: dataFormated,
+    };
+  }
+}
+
 export interface IInterestPointRepository {
   createInterestPoint(
     data: InputCreateInterestPoint
   ): Promise<OutputCreateInterestPoint>;
+  listAllInterestPoint(
+    data: InputListAllInterestPoint
+  ): Promise<OutputListAllInterestPoint>;
 }

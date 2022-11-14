@@ -1,7 +1,6 @@
 import { interestPointRepositoryMock } from "@test/utility/mocks/interestPointRepository";
 import { InsertInterestPointUseCase } from "@business/useCases/interestPoint/insertInterestPointUseCase";
 import { fakeInsertInterestPoint } from "@test/utility/fakes/fakeInterestPoint";
-import { OutputInsertInterestPointDto } from "@business/dtos/interestPoint/insertInterestPointDto";
 import { OutputCreateInterestPoint } from "@business/repositories/interestPoint/interestPointRepository";
 import {
   errorOnCreateInterestPoint,
