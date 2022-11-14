@@ -7,7 +7,7 @@ import {
   IError,
 } from "@business/errors/interestPoint/interestPoint";
 
-describe("1-business.useCases.interestPoints", () => {
+describe("1-business.useCases.interestPoints.insertInterestPointUseCase", () => {
   test("shold be able to create interest point", async () => {
     const insertInterestPoint = new InsertInterestPointUseCase();
 
