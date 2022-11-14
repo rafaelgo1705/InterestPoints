@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --project tsconfig.json && tscpaths -p tsconfig .json -s ./src -o ./dist",
+    "build": "tsc --project tsconfig-build.json && tscpaths -p tsconfig-build.json -s ./src -o ./dist",
     "start": "ts-node dist/index.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --ignore node_modules --transpile-only src/index.ts",
     "migrate:generate": "sequelize-cli migration:generate --name",
